@@ -1,0 +1,2 @@
+method = scp
+scp_file = $(HOME)/test-job/rar-test.sh

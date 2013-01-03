@@ -1,0 +1,11 @@
+platforms   = x86_64_CentOS6
+remote_task = rar-test.sh
+run_type    = build
+project     = r-a-r testing
+inputs      = rar.scp
+
+
+notify      = clem@sdsc.edu
+
+
+run_as_root = true
