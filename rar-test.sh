@@ -1,22 +1,14 @@
 #!/bin/bash
-echo "Creating test1..."
-echo > test1
-ls -la test1
-echo "Creating test2..."
-echo > test2
-ls -la test2
-echo "Chowning test2 to root as root..."
-sudo chown root.root test2
-ls -la test2
-# echo "Shutting down the machine..."
-# sudo shutdown -h now
 
-wget ftp://ftp.rocksclusters.org/pub/rocks/src/rocks-source-2013-01-03.tar.gz
-wget ftp://ftp.rocksclusters.org/pub/rocks/src/rocks-source-2013-01-03.tar.gz.md5
+Date=`date +%F`
+FileName=rocks-source-$Date.tar.gz
 
-md5sum -c rocks-source-2013-01-03.tar.gz.md5 || (echo Error file checksum; exit -1;)
+wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName
+wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName.md5
 
-tar -xvzf rocks-source-2013-01-03.tar.gz || (echo Error untarring file; exit -1;)
+md5sum -c $FileName.md5 || (echo Error file checksum; exit -1;)
+
+tar -xvzf $FileName || (echo Error untarring file; exit -1;)
 
 cd rocks
 
