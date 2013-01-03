@@ -6,3 +6,16 @@ continuous integration [1].
 
 
  [1]. https://www.batlab.org/
+
+
+Installation
+------------
+
+Checkout the git repo:
+git clone THIS_GIT_URL
+cd rocksonbatlab
+nmi_submit rar.submit
+
+
+
+
