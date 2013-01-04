@@ -1,2 +1,2 @@
 method = scp
-scp_file = $(HOME)/test-job/rar-test.sh
+scp_file = $(HOME)/rocksonbatlab/rar-test.sh
