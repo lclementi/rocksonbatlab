@@ -3,8 +3,9 @@ remote_task = rar-test.sh
 run_type    = build
 project     = r-a-r testing
 inputs      = rar.scp
+#outputs     = rar.output
 
-
+stream_user_io = true
 notify      = clem@sdsc.edu
 
 
