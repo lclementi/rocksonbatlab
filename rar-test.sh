@@ -30,5 +30,8 @@ popd
 
 sudo ./builder.sh < /dev/null 
 
+## ---- fetch all the output files
+tar -czvf results.tar.gz /tmp/*.out
 
 exit 0
+
