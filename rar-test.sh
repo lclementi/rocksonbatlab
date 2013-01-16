@@ -27,8 +27,13 @@ fi
 
 popd
 ## ---- build the whole thing
+#reload the new environment
+echo ----  Running builder script  ----
+. /etc/profile
+. /etc/profile.d/rocks-binaries.sh
+sudo -i ./builder.sh < /dev/null 
 
-sudo ./builder.sh < /dev/null 
+echo ----  End builder script      ----
 
 cd ..
 ## ---- fetch all the output files
