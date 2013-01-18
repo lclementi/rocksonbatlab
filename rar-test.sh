@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # remote machine for staging output of compilation
-RemoteMachine=calit2-119-136.ucsd.edu
+RemoteMachine=calit2-110-119-23.ucsd.edu
 RemotePath=upload
 RemoteUser=upload
 
@@ -53,7 +53,8 @@ RemoteDest=$RemoteUser@$RemoteMachine:~$RemotePath/$Date
 
 chmod 600 id_rsa
 #TODO finish staging out results
-echo scp -i id_rsa results.tar.gz $RemoteDest
+scp -o StrictHostKeyChecking=no -i id_rsa results.tar.gz $RemoteDest
+scp -o StrictHostKeyChecking=no -i id_rsa rocks/src/roll/*/*.iso /tmp/*.iso $RemoteDest
 
 exit 0
 
