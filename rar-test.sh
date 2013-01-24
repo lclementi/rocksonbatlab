@@ -19,6 +19,13 @@ tar -xvzf $FileName || (echo Error untarring file; exit -1;)
 #let free up some space
 rm $FileName
 
+# 
+# proper ownership if not the pxeflash will not compile
+# when creating a the pxe floppy it will not be able to chown to user id 
+# if file are owned by somebody else then root
+# 
+sudo chown -R root:root rocks
+
 cd rocks
 
 
@@ -41,7 +48,6 @@ echo ----  Running builder script  ----
 . /etc/profile
 . /etc/profile.d/rocks-binaries.sh
 sudo bash -l builder.sh < /dev/null 
-
 echo ----  End builder script      ----
 
 cd ..
