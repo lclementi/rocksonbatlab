@@ -55,12 +55,14 @@ cd ..
 tar -czvf results.tar.gz /tmp/*.out
 
 # stage them to remote machine
-RemoteDest=$RemoteUser@$RemoteMachine:~$RemotePath/$Date
+RemoteDest=$RemoteUser@$RemoteMachine:~$RemotePath/$Date/
 
 chmod 600 id_rsa
 #TODO finish staging out results
-scp -o StrictHostKeyChecking=no -i id_rsa results.tar.gz $RemoteDest
-scp -o StrictHostKeyChecking=no -i id_rsa rocks/src/roll/*/*.iso /tmp/*.iso $RemoteDest
+rsync -av -e "ssh -o StrictHostKeyChecking=no -i id_rsa" results.tar.gz $RemoteDest
+rsync -av -e "ssh -o StrictHostKeyChecking=no -i id_rsa"  rocks/src/roll/*/*.iso /tmp/*.iso $RemoteDest
+
+
 
 exit 0
 
