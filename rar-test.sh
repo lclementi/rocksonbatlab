@@ -1,32 +1,41 @@
 #!/bin/bash
 
-# remote machine for staging output of compilation
-RemoteMachine=calit2-110-119-23.ucsd.edu
-RemotePath=upload
-RemoteUser=upload
+## remote machine for staging output of compilation
+#RemoteMachine=calit2-110-119-23.ucsd.edu
+#RemotePath=upload
+#RemoteUser=upload
+#
+## used to figure out input file name for source code
+#Date=`date +%F`
+#FileName=rocks-source-$Date.tar.gz
+#
+#wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName
+#wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName.md5
+#
+#md5sum -c $FileName.md5 || (echo Error file checksum; exit -1;)
+#
+#tar -xvzf $FileName || (echo Error untarring file; exit -1;)
+#
+#lets free up some space
 
-# used to figure out input file name for source code
-Date=`date +%F`
-FileName=rocks-source-$Date.tar.gz
+wget -O master.tar.gz https://github.com/rocksclusters/master/archive/master.tar.gz || \
+	( echo Unable to download master repository; exit -1 )
+tar -xvzf master.tar.gz || ( echo Problem untarring; exit -1)
+mv master-master master
+rm master.tar.gz
+cd master
+./init.sh --source  || ( echo Unable to download sub-repositories; exit -1 )
+cd ..
 
-wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName
-wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName.md5
-
-md5sum -c $FileName.md5 || (echo Error file checksum; exit -1;)
-
-tar -xvzf $FileName || (echo Error untarring file; exit -1;)
-
-#let free up some space
-rm $FileName
 
 # 
 # proper ownership if not the pxeflash will not compile
 # when creating a the pxe floppy it will not be able to chown to user id 
 # if file are owned by somebody else then root
 # 
-sudo chown -R root:root rocks
+sudo chown -R root:root master
 
-cd rocks
+cd master
 
 
 echo --------   -----------------   -------------
