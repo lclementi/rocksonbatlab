@@ -18,7 +18,7 @@
 #
 #lets free up some space
 
-wget -O master.tar.gz https://github.com/rocksclusters/master/archive/master.tar.gz || \
+wget -O master.tar.gz https://github.com/rocksclusters/rocks/archive/master.tar.gz || \
 	( echo Unable to download master repository; exit -1 )
 tar -xvzf master.tar.gz || ( echo Problem untarring; exit -1)
 mv master-master master
