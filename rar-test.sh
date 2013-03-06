@@ -21,9 +21,9 @@
 wget -O master.tar.gz https://github.com/rocksclusters/rocks/archive/master.tar.gz || \
 	( echo Unable to download master repository; exit -1 )
 tar -xvzf master.tar.gz || ( echo Problem untarring; exit -1)
-mv master-master master
+mv rocks-master rocks
 rm master.tar.gz
-cd master
+cd rocks
 ./init.sh --source  || ( echo Unable to download sub-repositories; exit -1 )
 cd ..
 
@@ -35,7 +35,7 @@ cd ..
 # 
 sudo chown -R root:root master
 
-cd master
+cd rocks
 
 
 echo --------   -----------------   -------------
