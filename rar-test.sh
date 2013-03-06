@@ -46,7 +46,7 @@ echo --------   -----------------   -------------
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
 
 pushd src/roll/base
-sudo ./bootstrap0.sh < /dev/null 
+sudo bash -l ./bootstrap0.sh < /dev/null 
 
 if [ `/opt/rocks/bin/rocks list roll | wc -l ` -lt 3 ]; then 
 	echo Error bootstrapping the appliance;
