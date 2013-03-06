@@ -42,6 +42,9 @@ echo --------   -----------------   -------------
 echo --------   bootstrap section   -------------
 echo --------   -----------------   -------------
 
+#don't ask me why but in centos 5 we need this
+export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+
 pushd src/roll/base
 sudo ./bootstrap0.sh < /dev/null 
 
