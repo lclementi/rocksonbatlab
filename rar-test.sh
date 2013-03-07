@@ -1,12 +1,14 @@
 #!/bin/bash
 
 ## remote machine for staging output of compilation
-#RemoteMachine=calit2-110-119-23.ucsd.edu
-#RemotePath=upload
-#RemoteUser=upload
+RemoteMachine=calit2-110-119-23.ucsd.edu
+RemotePath=upload
+RemoteUser=upload
+
 #
 ## used to figure out input file name for source code
-#Date=`date +%F`
+Date=`date +%F`
+
 #FileName=rocks-source-$Date.tar.gz
 #
 #wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName
