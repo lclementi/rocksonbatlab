@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# This script checksout rocks and built it on BatLab 
+# 
+# LC
 
 ## remote machine for staging output of compilation
 RemoteMachine=calit2-110-119-23.ucsd.edu

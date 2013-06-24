@@ -1,5 +1,5 @@
 platforms   = x86_64_CentOS6
-remote_task = rar-test.sh
+remote_task = build_rocks.sh
 run_type    = build
 project     = r-a-r testing
 inputs      = rar.scp, rar.ssh.scp
