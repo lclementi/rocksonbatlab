@@ -1,8 +1,13 @@
+# submission script for rocksonbatlab
+#
+# submit with nmi_submit rar.submit
+
+# currently available Centos6/5
 platforms   = x86_64_CentOS6
 remote_task = build_rocks.sh
 run_type    = build
 project     = r-a-r testing
-inputs      = rar.scp, rar.ssh.scp
+inputs      = rar.build.scp, rar.key.scp
 #outputs     = rar.output
 
 stream_user_io = true
