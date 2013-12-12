@@ -70,7 +70,7 @@ echo ----  End builder script      ----
 
 cd ..
 ## ---- fetch all the output files
-tar -czvf results.tar.gz /tmp/*.out
+tar -czvf results.tar.gz /tmp/*.out remote_task.*
 
 # stage them to remote machine
 RemoteDest=$RemoteUser@$RemoteMachine:~$RemotePath/$Date/
