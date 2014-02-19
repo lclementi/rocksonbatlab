@@ -48,6 +48,11 @@ echo --------   -----------------   -------------
 echo --------   bootstrap section   -------------
 echo --------   -----------------   -------------
 
+
+
+sudo yum -y install system-config-keyboard
+
+
 #don't ask me why but in centos 5 we need this
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
 
