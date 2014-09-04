@@ -13,6 +13,10 @@ RemoteUser=upload
 ## used to figure out input file name for source code
 Date=`date +%F`
 
+
+echo running update
+
+sudo yum -y update
 #FileName=rocks-source-$Date.tar.gz
 #
 #wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName
