@@ -16,7 +16,7 @@ Date=`date +%F`
 
 echo running update
 
-sudo yum -y update
+sudo yum -x condor -y update
 #FileName=rocks-source-$Date.tar.gz
 #
 #wget ftp://ftp.rocksclusters.org/pub/rocks/src/$FileName
@@ -54,7 +54,7 @@ echo --------   -----------------   -------------
 
 
 
-sudo yum -y install system-config-keyboard
+sudo yum -y install system-config-keyboard desktop-file-utils
 
 
 #don't ask me why but in centos 5 we need this
